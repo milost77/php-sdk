@@ -23,13 +23,13 @@ jobs:
       - name: Install composer
         uses: php-actions/composer@8a65f0d3c6a1d17ca4800491a40b5756a4c164f3 # v6
         with:
-          working-dir: languages/php/
+          working_dir: languages/php/
 
       - name: Push library to Packagist
         run: |
-          cd languages/php/
           ls -lah
           cd src/macos-x64
           cd ../../
           composer install
           composer validate
+        working-directory: languages/php/
