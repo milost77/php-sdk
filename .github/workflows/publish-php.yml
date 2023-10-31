@@ -23,11 +23,8 @@ jobs:
           php-version: '7.4'
           extensions: ffi
 
-      - name: Install composer
-        uses: ramsey/composer-install@83af392bf5f031813d25e6fe4cd626cdba9a2df6 # 2.2.0
-
-
       - name: Push library to Packagist
+        uses: php-actions/composer@8a65f0d3c6a1d17ca4800491a40b5756a4c164f3 # v6
         run: |
           cd languages/php/
           ls -lah
