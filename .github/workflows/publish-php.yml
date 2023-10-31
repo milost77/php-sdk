@@ -23,9 +23,6 @@ jobs:
 
       - name: Push library to Packagist
         run: |
-          ls -lah
-          cd src/macos-x64
-          cd ../../
           composer install
           composer validate
         working-directory: languages/php/
