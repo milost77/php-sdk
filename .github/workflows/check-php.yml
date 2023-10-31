@@ -21,7 +21,7 @@ jobs:
           tools: composer
           extensions: ext-ffi
 
-      - name: Push library to Packagist
+      - name: Composer check
         run: |
           composer install
           composer validate
