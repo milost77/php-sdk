@@ -6,9 +6,6 @@ on:
       - master
 
 jobs:
-  build_rust:
-    uses: ./.github/workflows/build-rust-cross-platform.yml
-
   setup_php:
     name: Setup PHP
     runs-on: ubuntu-22.04
@@ -25,6 +22,8 @@ jobs:
 
       - name: Install composer
         uses: php-actions/composer@8a65f0d3c6a1d17ca4800491a40b5756a4c164f3 # v6
+        with:
+          working-directory: languages/php/
 
       - name: Push library to Packagist
         run: |
