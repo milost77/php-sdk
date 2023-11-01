@@ -10,8 +10,14 @@ jobs:
     name: Setup PHP
     runs-on: ubuntu-22.04
 
-    build_rust:
-      uses: ./.github/workflows/build-rust-cross-platform.yml
+  build_rust:
+    uses: ./.github/workflows/build-rust-cross-platform.yml
+
+  publish_php:
+    name: Build Ruby
+    runs-on: ubuntu-22.04
+    needs:
+      - build_rust
 
     steps:
       - name: Checkout Repository
