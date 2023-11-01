@@ -71,3 +71,4 @@ jobs:
 
       - name: Publish version
         run: curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=malirobot&apiToken=${{secrets.PACKAGIST_KEY}}' -d'{"repository":{"url":"https://packagist.org/packages/bitwarden/sdk"}}'
+        working-directory: languages/php/
