@@ -67,7 +67,6 @@ jobs:
           for ((i=0; i<${#platforms[@]}; i++)); do
             cp "temp/${platforms[$i]}/${files[$i]}" "languages/php/src/lib/${platforms[$i]}/${files[$i]}"
           done
-        shell: bash
 
       - name: Publish version
         run: curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=malirobot&apiToken=${{secrets.PACKAGIST_KEY}}' -d'{"repository":{"url":"https://packagist.org/packages/bitwarden/sdk"}}'
